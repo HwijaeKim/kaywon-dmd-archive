@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width:100px;
+            height:100px;
+            background:aqua;
+            transition:all 1s;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<button id="width">width를 바꿔줘</button>
+<script>
+
+    const box = document.querySelector('.box')
+    const width = document.querySelector('#width')
+    let widthNum = prompt('숫자를 입력해라')
+    widthNum = parseInt(widthNum)
+
+
+    width.addEventListener('click', () => {
+        box.style.width =  `${widthNum}px`
+    })
+
+</script>
+</body>
+</html>

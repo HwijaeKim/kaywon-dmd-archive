@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3-1</title>
+</head>
+<body>
+
+<button>랜덤</button>
+<button>버튼</button>
+
+
+<script>
+    let btn = document.querySelectorAll('button');
+    // let randomNum0 = 0;
+
+    //ChatGPT Code
+    btn.forEach((item) => {
+        item.addEventListener('click', () => {
+            let randColor = Array.from({length: 6}, () => Math.floor(Math.random() *10)).join('');
+
+                document.body.style.backgroundColor =  `#${randColor}`;
+            });
+
+    });
+
+</script>
+
+</body>
+</html>

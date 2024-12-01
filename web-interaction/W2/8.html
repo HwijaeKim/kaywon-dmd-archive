@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8</title>
+</head>
+
+<style>
+    .toast {
+        opacity: 0;
+        width:300px;
+        height:100px;
+        background:palegoldenrod;
+        font-size:20px;
+    }
+    .toast.active {
+        opacity: 1;
+    }
+
+</style>
+
+<body>
+
+<button class="pop">pop</button>
+<button class="close">close</button>
+<div class="toast">어서오세요</div>
+
+
+<script>
+    document.querySelector('.pop').addEventListener('click', () => {
+        document.querySelector('.toast').classList.add('active');
+    })
+
+    document.querySelector('.close').addEventListener('click', () => {
+        document.querySelector('.toast').classList.remove('active');
+    })
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 500px;
+        }
+        .txt-box {
+            display: flex;
+        }
+        .area {
+            position:relative;
+            width:30px;
+            height:60px;
+            overflow:hidden;
+            animation: rotate 6s var(--delay) infinite ease-in-out;
+        }
+        .area::before {
+            position:absolute;
+            left:var(--left);
+            content:'안녕나는신원';
+            font-size:50px;
+            width:max-content;
+            color:hsl(var(--hue), 75%, 75%);
+        }
+        @keyframes rotate {
+            0%, 10% {
+                transform: rotateX(0deg);
+            }
+            90%, 100% {
+                transform: rotateX(720deg);
+            }
+        }
+        .area:nth-child(1) {
+            --left: 0px;
+            --hue: 0;
+            --delay: 0s;
+        }
+
+        .area:nth-child(2) {
+            --left: -30px;
+            --hue: 30;
+            --delay: 0.1s;
+        }
+
+        .area:nth-child(3) {
+            --left: -60px;
+            --hue: 60;
+            --delay: 0.2s;
+        }
+
+        .area:nth-child(4) {
+            --left: -90px;
+            --hue: 90;
+            --delay: 0.3s;
+        }
+        .area:nth-child(5) {
+            --left: -120px;
+            --hue: 120;
+            --delay: 0.4s;
+        }
+        .area:nth-child(6) {
+            --left: -150px;
+            --hue: 150;
+            --delay: 0.5s;
+        }
+        .area:nth-child(7) {
+            --left: -180px;
+            --hue: 180;
+            --delay: 0.6s;
+        }
+        .area:nth-child(8) {
+            --left: -210px;
+            --hue: 210;
+            --delay: 0.7s;
+        }
+        .area:nth-child(9) {
+            --left: -240px;
+            --hue: 240;
+            --delay: 0.8s;
+        }
+        .area:nth-child(10) {
+            --left: -270px;
+            --hue: 270;
+            --delay: 0.9s;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="txt-box">
+    <div class="area"></div>
+    <div class="area"></div>
+    <div class="area"></div>
+    <div class="area"></div>
+    <div class="area"></div>
+    <div class="area"></div>
+    <div class="area"></div>
+    <div class="area"></div>
+    <div class="area"></div>
+    <div class="area"></div>
+</div>
+</body>
+</html>

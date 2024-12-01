@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+  <style>
+    #canvas {
+      border: 1px solid black;
+    }
+
+  </style>
+</head>
+<body>
+
+<canvas id="canvas" width="400" height="400"></canvas>
+
+
+<script>
+  var canvas = document.getElementById("canvas");
+  var ctx = canvas.getContext('2d'); // 캔버스의 시작
+  canvas.width = window.innerWidth - 50;
+  canvas.height = window.innerHeight -50;
+
+
+  var rect = {
+    x: 10,
+    y: 50,
+    width: 50,
+    height: 50,
+
+    draw() {
+      ctx.fillStyle = 'red';
+      ctx.fillRect(this.x, this.y, this.width, this.height);
+
+    }
+  }
+
+
+  var direction = 1;
+
+
+  function move() {
+
+      requestAnimationFrame(move);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      if(rect.x > canvas.width - rect.width || rect.x <= 0 || rect.y > canvas.height - rect.height || rect.y <= 0) {
+          direction *= -1;
+      }
+
+      rect.x += 10 * direction;
+      rect.y += 5 * direction;
+      rect.draw();
+  }
+
+  move();
+
+
+</script>
+</body>
+</html>

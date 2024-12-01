@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            position: absolute;
+            top:200px;
+            left:0;
+            width:100px;
+            height:100px;
+            background:pink;
+            transition: all 1s;
+        }
+        .box.active {
+            animation: move 1s forwards;
+        }
+        @keyframes move {
+            0% {left:0;}
+            100% {left:400px;}
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <button class="add">add</button>
+
+<script>
+    const box = document.querySelector('.box')
+    const add = document.querySelector('.add')
+
+
+    add.addEventListener('click', () => {
+        box.classList.toggle('active')
+    })
+
+</script>
+</body>
+</html>

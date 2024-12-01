@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<ul>
+<li>
+  내이름은<strong></strong>
+  내나이는<span></span>살
+</li>
+<li>
+  내이름은<strong></strong>
+  내나이는<span></span>살
+</li>
+<li>
+  내이름은<strong></strong>
+  내나이는<span></span>살
+</li>
+</ul>
+
+<script>
+  let cat = [
+    {
+      name: '루루',
+      age: 20
+    },
+
+    {
+      name: '첨지',
+      age: 50
+    },
+
+    {
+      name: '춘봉',
+      age: 100
+    }
+  ]
+
+  const li = document.querySelectorAll('li');
+
+  li.forEach((item, index) => {
+    item.querySelector('strong').innerHTML = cat[index].name;
+    item.querySelector('span').innerHTML = cat[index].age;
+  })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+  <style>
+    section {
+      height: 100vh;
+    }
+    section:nth-child(1) {
+      background: pink;
+    }
+    section:nth-child(2) {
+      background: skyblue;
+      animation: bg 3s;
+      animation-timeline: view();
+    }
+    section:nth-child(3) {
+      background: coral;
+    }
+    section:nth-child(4) {
+      background: darkolivegreen;
+      animation: pung 1s;
+      animation-timeline: view();
+    }
+
+    @keyframes pung {
+      from {
+        opacity: 0;
+        transform: scale(.5);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes bg {
+      from {
+        background: skyblue;
+      }
+      to {
+        background: black;
+      }
+    }
+
+
+  </style>
+</head>
+<body>
+
+<section>
+  <h2>1번</h2>
+</section>
+
+<section>
+  <h2>2번</h2>
+</section>
+
+<section>
+  <h2>3번</h2>
+</section>
+
+<section>
+  <h2>4번</h2>
+</section>
+
+</body>
+</html>

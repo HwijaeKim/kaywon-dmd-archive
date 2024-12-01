@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        .toast {
+            opacity: 0;
+            width:300px;
+            height:100px;
+            background:palegoldenrod;
+            font-size:20px;
+        }
+        .toast.active {
+            opacity: 1;
+        }
+
+
+    </style>
+</head>
+<body>
+    <button class="pop">pop</button>
+    <button class="close">close</button>
+    <div class="toast">안녕</div>
+
+<script>
+    const toast = document.querySelector('.toast')
+    const pop = document.querySelector('.pop')
+    const close = document.querySelector('.close')
+
+
+    pop.addEventListener('click', () => {
+        toast.classList.add('active')
+    })
+    close.addEventListener('click', () => {
+        toast.classList.remove('active')
+    })
+
+</script>
+</body>
+</html>

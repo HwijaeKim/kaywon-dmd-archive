@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+  ul {
+    display: flex;
+    list-style: none;
+  }
+  li {
+    width: calc(100% / 3);
+
+  }
+  li img {
+    width: 100%;
+  }
+</style>
+<body>
+<ul></ul>
+
+<script>
+  // const img = ['./sources/img_1.jpg', './sources/img_2.jpg', "./sources/img_3.jpg"];
+  // const ul = document.querySelector('ul');
+  //
+  // img.forEach(url => {
+  //   const li = document.createElement('li');
+  //   const img = document.createElement('img');
+  //
+  //   img.src = url;
+  //   li.appendChild(img);
+  //   ul.appendChild(li);
+  // })
+
+
+  const info = [
+    {
+      url: './sources/img_1.jpg',
+      alt: '춘봉'
+    },
+
+    {
+      url: './sources/img_2.jpg',
+      alt: '첨지'
+    },
+
+    {
+      url: './sources/img_3.jpg',
+      alt: '하빈'
+    }
+  ]
+  const ul = document.querySelector('ul');
+
+  info.forEach((item, index) => {
+    const li = document.createElement('li');
+    const img = document.createElement('img');
+    const span = document.createElement('span');
+
+    img.src = item.url;
+    img.alt = item.alt;
+    span.innerHTML = item.alt;
+
+    li.appendChild(span);
+    li.appendChild(img);
+    ul.appendChild(li);
+  })
+
+
+</script>
+</body>
+</html>

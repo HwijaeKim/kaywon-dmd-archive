@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul {
+            display: flex;
+            list-style: none;
+        }
+        li {
+            width:calc(100% / 3);
+        }
+    </style>
+</head>
+<body>
+<ul></ul>
+<script>
+
+   const img = ['img_1.jpg', 'img_2.jpg', 'img_3.jpg']
+
+   const img
+
+   const ul = document.querySelector('ul')
+
+   img.forEach(url => {
+       const li = document.createElement('li')
+       const img = document.createElement('img')
+
+       img.src = url
+       li.appendChild(img)
+       ul.appendChild(li)
+
+   })
+
+
+</script>
+</body>
+</html>

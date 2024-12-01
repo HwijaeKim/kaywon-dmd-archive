@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="color">
+<span class="text">???</span>
+
+
+<script>
+  const color = document.querySelector('input[type="color"]')
+  let color_txt = document.querySelector('.text');
+
+  color.addEventListener('change', () => {
+    color_txt.innerHTML = color.value;
+    document.body.style.backgroundColor = color.value;
+  })
+
+</script>
+
+</body>
+</html>

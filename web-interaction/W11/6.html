@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+  <style>
+    #canvas {
+      border: 1px solid black;
+    }
+
+  </style>
+</head>
+<body>
+
+<canvas id="canvas" width="400" height="400"></canvas>
+
+
+<script>
+  var canvas = document.getElementById("canvas");
+  var ctx = canvas.getContext('2d'); // 캔버스의 시작
+  canvas.width = window.innerWidth - 50;
+  canvas.height = window.innerHeight -50;
+
+  var img = new Image();
+  img.src = './img/dvd.png';
+
+
+  var rect = {
+    x: 10,
+    y: 50,
+    width: 50,
+    height: 50,
+    dx: Math.random() * 10 - 5,
+    dy: Math.random() * 10 - 5,
+
+      draw() {
+      ctx.fillStyle = 'red';
+          ctx.drawImage(img, 10, 50, 50, 50);
+      ctx.fillRect(this.x, this.y, this.width, this.height);
+
+    }
+  }
+
+
+  // var direction = 1;
+
+
+  function move() {
+
+      requestAnimationFrame(move);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      if(rect.x >= canvas.width - rect.width || rect.x <= 0) {
+          rect.dx *= -1;
+      }
+
+      if(rect.y >= canvas.height - rect.height || rect.y <= 0) {
+          rect.dy *= -1;
+
+      }
+
+      rect.x += rect.dx;
+      rect.y += rect.dy;
+      rect.draw();
+  }
+
+  move();
+
+
+</script>
+</body>
+</html>

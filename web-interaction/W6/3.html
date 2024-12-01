@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3</title>
+
+  <style>
+    #wrap {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      width: 1000px;
+      height: 500px;
+      border: solid 1px #000;
+      perspective: 400px;
+    }
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-style: preserve-3d;
+        animation: rotate 10s infinite alternate;
+    }
+    .box {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -100px;
+      margin-left: -100px;
+
+      width: 200px;
+      height: 200px;
+      /*background: rgba(0, 0, 0, .3);*/
+      color: #fff;
+    }
+    .front {
+        transform: translateZ(100px);
+        background: url("./img/1.png");
+    }
+    .back {
+      transform: translateZ(-100px);
+      background: url("./img/2.png");
+    }
+    .top {
+      transform: rotateX(90deg) translateZ(100px);
+      background: url("./img/3.png");
+    }
+    .bottom {
+      transform: rotateX(90deg) translateZ(-100px);
+      background: url("./img/4.png");
+    }
+    .left {
+      transform: rotateY(90deg) translateZ(-100px);
+      background: url("./img/5.png");
+    }
+    .right {
+      transform: rotateY(90deg) translateZ(100px);
+      background: url("./img/6.png");
+    }
+
+    @keyframes rotate {
+      0% {transform: rotateY(0deg)}
+      100% {transform: rotateY(360deg) rotateX(360deg)}
+
+    }
+
+  </style>
+</head>
+<body>
+
+<div id="wrap">
+    <div class="container">
+        <div class="box front"></div>
+        <div class="box back"></div>
+        <div class="box top"></div>
+        <div class="box bottom"></div>
+        <div class="box left"></div>
+        <div class="box right"></div>
+    </div>
+</div>
+</body>
+</html>

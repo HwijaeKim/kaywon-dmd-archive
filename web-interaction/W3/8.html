@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<ul></ul>
+
+<script>
+    let items = ['나나', '토토', '도도'];
+
+    const liElement = items.map(item => {
+        const li = document.createElement('li');
+        li.innerHTML = item;
+        return li;
+    })
+
+    console.log(liElement)
+
+    const ul = document.querySelector('ul');
+    liElement.forEach(li => {
+        ul.appendChild((li));
+    })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4_실습</title>
+</head>
+
+<style>
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: coral;
+        margin-bottom: 50px;
+        transition: ease .5s;
+    }
+
+</style>
+<body>
+<div class="box"></div>
+<button id="width">입력한 값으로 변경하라</button>
+
+<p>입력한 값은... <span></span> 인 것 같다..</p>
+
+
+<script>
+    let widthNum = prompt('너비를 입력하라');
+    widthNum = parseInt(widthNum)
+
+    let heightNum = prompt('높이를 입력하라');
+    let colorText = prompt('색깔을 영어로 입력하라.');
+    let box = document.querySelector('.box');
+    let btn = document.getElementById('width');
+    let text = document.querySelector('span');
+
+    text.innerHTML = '너비 ' + widthNum + ', 높이 ' + heightNum + ', 색깔은 ' + colorText;
+
+
+    btn.addEventListener('click', () => {
+        // box.style.width = widthNum + 'px';
+        box.style.cssText = `width: ${widthNum}px; height: ${heightNum}px; background-color: ${colorText}`;
+    })
+
+
+
+</script>
+
+</body>
+</html>

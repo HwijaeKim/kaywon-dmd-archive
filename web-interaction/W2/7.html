@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7</title>
+</head>
+
+<style>
+    button {
+        width: 100px;
+        height: 30px;
+        border: none;
+        background: navajowhite;
+        border-radius: 50px;
+    }
+    button:hover {
+        opacity: .8;
+    }
+    button:active {
+        opacity: .5;
+    }
+    .box {
+        width: 100px;
+        height: 100px;
+        background: coral;
+
+        position: absolute;
+        top: 50px;
+    }
+    .box.active {
+        animation: ani 1s forwards;
+    }
+
+
+    @keyframes ani{
+        0% {
+            width: 100px;
+            height: 100px;
+            background: coral;
+
+            position: absolute;
+            top: 50px;
+            left: 0;
+        }
+        100% {
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+            background: darkslategray;
+            top: 50%;
+            left: 50%;
+        }
+    }
+
+</style>
+<body>
+<div class="box"></div>
+<button class="add">추가</button>
+
+
+<script>
+    let box = document.querySelector('.box');
+    let addBtn = document.querySelector('.add');
+
+    addBtn.addEventListener('click', () => {
+        box.classList.toggle('active');
+    })
+
+
+</script>
+
+</body>
+</html>

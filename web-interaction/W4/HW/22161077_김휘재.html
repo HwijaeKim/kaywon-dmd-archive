@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>22161077_김휘재</title>
+<!--    Web Fonts 선언-->
+    <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
+
+    <!--    스타일시트 선언-->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+<section id="loadingBox">
+    <p>LOADING..</p>
+    <div id="loading"></div>
+</section>
+
+
+
+<section id="mainContents">
+    <div class="character">
+        <div class="img_cha"></div>
+        <div class="img_shadow"></div>
+        <div class="bgWrap">
+            <div class="red"></div>
+            <div class="spring"></div>
+            <div class="green"></div>
+            <div class="yellow"></div>
+        </div>
+        <div class="height">
+            <div class="bar"></div>
+            <div class="triangle"></div>
+        </div>
+    </div>
+
+    <div class="toggle">
+        <label>
+            <input type="radio" name="mode" value="light" checked>
+            <span class="light">LIGHT</span>
+        </label>
+        <label>
+            <input type="radio" name="mode" value="dark">
+            <span class="dark">DARK</span>
+        </label>
+    </div>
+</section>
+
+
+<script>
+    const loadingBox = document.getElementById('loadingBox');
+    const mainContents = document.getElementById('mainContents')
+
+    setTimeout(() => {
+        loadingBox.style.display = 'none';
+        document.body.style.background = 'white';
+        mainContents.style.display = 'block'
+    }, 3000)
+
+
+
+    const radio = document.querySelectorAll('input[type="radio"]');
+    const loading = document.querySelector('.character');
+    const imgChar = document.querySelector('.img_cha');
+
+    radio.forEach(item => {
+        item.addEventListener('click', () => {
+
+            if(item.value === 'light') {
+                document.body.style.background = 'white'
+                loading.style.background = 'skyblue';
+                imgChar.style.background = 'url("./img/spaceship_L.png") no-repeat';
+                imgChar.style.backgroundSize = 'cover';
+            }
+            else if(item.value === 'dark') {
+                document.body.style.background = '#333D5B'
+                loading.style.background = '#222';
+                imgChar.style.background = 'url("./img/spaceship_D.png") no-repeat';
+                imgChar.style.backgroundSize = 'cover';
+            }
+
+        })
+    })
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width:100px;
+            height:100px;
+            background:aqua;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<h1></h1>
+
+<script>
+    const box = document.querySelector('.box')
+    const h1 = document.querySelector('h1')
+
+    box.addEventListener('click', () => {
+        h1.innerHTML = '클릭'
+    })
+    box.addEventListener('mouseover', () => {
+        h1.innerHTML = '들어옴'
+    })
+    box.addEventListener('mouseout', () => {
+        h1.innerHTML = '나감'
+    })
+    box.addEventListener('mouseup', () => {
+        h1.innerHTML = '뗐다'
+    })
+    box.addEventListener('mousedown', () => {
+        h1.innerHTML = '누르는중'
+    })
+    box.addEventListener('dblclick', () => {
+        h1.innerHTML = '더블클릭'
+    })
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>22161077_김휘재_2주차</title>
+<!--Web Fonts 선언-->
+    <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+
+</head>
+
+<style>
+    body {
+        font-family: 'SUIT', sans-serif;
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+        object-fit: cover;
+        object-position: center top;
+    }
+    .title {
+        font-weight: 900;
+    }
+
+    button {
+        border: solid .5px gray;
+        width: 120px;
+        height: 35px;
+        border-radius: 10px;
+        background: #fff;
+        /*color: white;*/
+        font-weight: 100;
+    }
+    button:hover {
+        background: #EFEFEF;
+    }
+    button:active {
+        background: lightgray;
+    }
+    .info {
+        margin-left: 10px;
+        background: black;
+        color: white;
+        padding: 5px 10px;
+    }
+
+
+    section {
+        /*border: solid 1px red;*/
+        margin-top: 15px;
+        height: 85vh;
+    }
+
+/*    win_container*/
+    #win_container {
+        display: none;
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        /*transform: translate(-50%, -50%);*/
+        border: solid .5px gray;
+        width: 500px;
+        height: 500px;
+        background: white;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, .25);
+
+    }
+    #win_container.active {
+        display: block;
+        animation: win_ani forwards .5s;
+    }
+    @keyframes win_ani {
+        0% {
+            transform: scale(.5);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+    #win_container.max {
+        position: relative;
+        /*top: 0;*/
+        /*left: 0;*/
+        /*width: 100%;*/
+        /*height: 100%;*/
+        animation: win_max forwards .5s;
+    }
+    @keyframes win_max {
+        0% {
+
+        }
+        100% {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+
+
+    .win_top {
+        width: 100%;
+        height: 45px;
+        /*border: solid 1px red;*/
+        background: #EFEFEF;
+    }
+    .win_top span {
+        /*display: block;*/
+        /*border: solid 1px red;*/
+        vertical-align: center;
+        height: 45px;
+        margin-left: 15px;
+        align-content: center;
+        /*padding-top: 10px;*/
+        /*bottom: 0;*/
+        position: absolute;
+        font-size: 16px;
+        color: gray;
+    }
+    .win_btn {
+        float: right;
+        margin-right: 15px;
+        margin-top: 12px;
+        /*border: solid 1px red;*/
+    }
+    .win_btn img {
+        width: 20px;
+        margin-left: 10px;
+    }
+    .win_max:hover {
+        opacity: .5;
+    }
+
+/*    mac_container*/
+    #mac_container {
+        display: none;
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        /*transform: translate(50%, 50%);*/
+        border: solid .5px lightgray;
+        border-radius: 15px;
+        width: 500px;
+        height: 500px;
+        background: white;
+        /*transform: scale(0);*/
+        box-shadow: 5px 5px 25px rgba(0, 0, 0, .15);
+    }
+    #mac_container.active {
+        display: block;
+        /*position: absolute;*/
+        /*top: 50%;*/
+        /*left: 50%;*/
+        /*transform: translate(-50%, -50%);*/
+        animation: mac_ani forwards .5s;
+    }
+    @keyframes mac_ani {
+        0% {
+            transform: scale(.5);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+    #mac_container.max {
+        position: relative;
+        /*top: 0;*/
+        /*left: 0;*/
+        /*width: 100%;*/
+        /*height: 100%;*/
+        animation: mac_max forwards .5s;
+    }
+    @keyframes mac_max {
+        0% {
+
+        }
+        100% {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .mac_top {
+        display: inline-block;
+        width: 100%;
+        height: 40px;
+        border-radius: 15px 15px 0 0;
+        background: #EFEFEF;
+    }
+    .mac_top p {
+        /*position: absolute;*/
+        display: inline-block;
+        /*border: solid 1px red;*/
+        width: 500px;
+        text-align: center;
+    }
+    .mac_btn {
+        /*float: right;*/
+        /*border: solid 1px red;*/
+        display: inline-block;
+        height: 40px;
+        align-content: center;
+        margin-left: 15px;
+    }
+    .red {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        background: #FF5F57;
+        border-radius: 15px;
+        margin-right: 3px;
+    }
+    .yellow {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        background: #FEBC2E;
+        border-radius: 15px;
+        margin-right: 3px;
+    }
+    .green {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        background: #28C841;
+        border-radius: 15px;
+        margin-right: 3px;
+    }
+    .green:hover {
+        background: #289D3A;
+    }
+    /*.green.active {*/
+    /*    opacity: .5;*/
+    /*}*/
+</style>
+<body>
+<h1 class="title">MY OPERATING SYSTEM HISTORY</h1>
+
+<button class="win">2009~2017</button>
+<button class="mac">2018~Current</button>
+<button class="return">RETURN</button>
+<span class="info">최대화 버튼틀 클릭해 보세요.</span>
+
+<section>
+    <div id="win_container">
+        <div class="win_top">
+            <span>Welcome to the Setup Wizard</span>
+            <div class="win_btn">
+                <img src="https://synologykct.synology.me/web_interaction/W2/win_btn1.png">
+                <img class="win_max" src="https://synologykct.synology.me/web_interaction/W2/win_btn2.png">
+                <img src="https://synologykct.synology.me/web_interaction/W2/win_btn3.png">
+            </div>
+        </div>
+    </div>
+
+    <div id="mac_container">
+        <div class="mac_top">
+<!--            <span>Untitled</span>-->
+            <div class="mac_btn">
+                <div class="red"></div>
+                <div class="yellow"></div>
+                <div class="green"></div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<script>
+    let btn = document.querySelectorAll('button');
+    let title = document.querySelector('.title');
+    let win_con = document.getElementById('win_container');
+    let mac_con = document.getElementById('mac_container');
+    let win_max = document.querySelector('.win_max');
+    let mac_max = document.querySelector('.green');
+
+
+    btn.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            if(item.classList.contains('win')) {
+                document.body.style.backgroundImage = "url('https://synologykct.synology.me/web_interaction/W2/win_bg.png')";
+                title.style.cssText = "color: white; text-shadow: 2px 2px 15px rgba(0, 0, 0, .25);";
+                mac_con.classList.remove('active');
+                win_con.classList.add('active');
+            }
+
+            else if(item.classList.contains('mac')) {
+                document.body.style.backgroundImage = "url('https://synologykct.synology.me/web_interaction/W2/mac_bg.png')";
+                title.style.cssText = "color: white; text-shadow: 2px 2px 15px rgba(0, 0, 0, .25);";
+                mac_con.classList.add('active');
+                win_con.classList.remove('active');
+            }
+
+            else if(item.classList.contains('return')) {
+                document.body.style.backgroundImage = 'none';
+                title.style.cssText = "color: black; text-shadow: none";
+                mac_con.classList.remove('active');
+                win_con.classList.remove('active');
+            }
+        })
+    })
+
+    win_max.addEventListener('click', () => {
+        win_con.classList.toggle('max');
+    })
+
+    mac_max.addEventListener('click', () => {
+        mac_con.classList.toggle('max');
+    })
+</script>
+</body>
+</html>

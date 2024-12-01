@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .path {
+      stroke-dasharray: 500;
+      stroke-dashoffset: 500;
+      animation: dash 3s linear infinite;
+    }
+
+    @keyframes dash {
+      from {
+        stroke-dashoffset: 500;
+      }
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+
+  </style>
+</head>
+<body>
+<svg>
+  <path class="path" fill="none" stroke="#000000" d="M20,20 100,100 180,20 260,100"/>
+</svg>
+
+
+</body>
+</html>

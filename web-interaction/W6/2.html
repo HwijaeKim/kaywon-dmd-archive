@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2</title>
+
+  <style>
+    #wrap {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      width: 1000px;
+      height: 500px;
+      border: solid 1px #000;
+      perspective: 400px;
+
+      transform-style: preserve-3d;
+      animation: rotate 1s;
+    }
+    .box {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -100px;
+      margin-left: -100px;
+
+      width: 200px;
+      height: 200px;
+      /*background: rgba(0, 0, 0, .3);*/
+      color: #fff;
+    }
+    .back {
+      transform: translateZ(-100px);
+      background: rgba(255, 35, 35, 0.3);
+    }
+    .front {
+      transform: translateZ(100px);
+      background: rgba(0, 0, 0, .3);
+    }
+    .top {
+      transform: rotateX(90deg) translateZ(100px);
+      background: rgba(10, 67, 255, 0.3);
+    }
+    .bottom {
+      transform: rotateX(90deg) translateZ(-100px);
+      background: rgba(47, 255, 0, 0.3);
+    }
+    .left {
+      transform: rotateY(90deg) translateZ(-100px);
+      background: rgba(255, 234, 0, 0.3);
+    }
+    .right {
+      transform: rotateY(90deg) translateZ(100px);
+      background: rgba(153, 0, 255, 0.3);
+    }
+
+    @keyframes rotate {
+      0% {transform: rotateY(0deg)}
+      50% {transform: rotateY(90deg)}
+      100% {transform: rotateX(270deg)}
+
+    }
+
+  </style>
+</head>
+<body>
+
+<div id="wrap">
+  <div class="box front">front</div>
+  <div class="box back">back</div>
+  <div class="box top">top</div>
+  <div class="box bottom">bottom</div>
+  <div class="box left">left</div>
+  <div class="box right">right</div>
+</div>
+</body>
+</html>

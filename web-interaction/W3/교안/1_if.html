@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width:100px;
+            height:100px;
+            background:aqua;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<script>
+    let inputNum = prompt('숫자를 입력하세요');
+    inputNum = parseInt(inputNum);
+    const box = document.querySelector('.box')
+
+    if(inputNum > 5) {
+        box.style.backgroundColor = 'tomato'
+    }
+
+</script>
+</body>
+</html>

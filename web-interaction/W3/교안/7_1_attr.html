@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" placeholder="이름을 입력하세요">
+<button>로그인</button>
+<h1></h1>
+
+<script>
+  const input = document.querySelector('input[type="text"]')
+  const btn = document.querySelector('button')
+  const h1 = document.querySelector('h1')
+
+  // btn.addEventListener('click', () => {
+  //     const name = input.value;
+  //     h1.innerHTML = `<strong>${name}</strong>님 안녕하세요`
+  // })
+
+
+  // btn.addEventListener('click', () => {
+  //   const name = input.value;
+  //
+  //   if(name !=='') {
+  //     h1.innerHTML = `<strong>${name}</strong>님 안녕하세요`
+  //   }else {
+  //     alert('입력하세요')
+  //   }
+  // })
+
+  btn.addEventListener('click', () => {
+    const name = input.value;
+
+    if(name.length >= 2) {
+      h1.innerHTML = `<strong>${name}</strong>님 안녕하세요`
+    }else {
+      alert('입력하세요')
+    }
+  })
+</script>
+</body>
+</html>

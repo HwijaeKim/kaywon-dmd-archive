@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        background: #1e2338;
+    }
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 300px;
+        height: 440px;
+        text-align: center;
+
+        box-shadow: 20px 20px 50px rgba(0, 0, 0, .5);
+        border-radius: 15px;
+        background: rgba(255, 255, 255, .1);
+        border-top: solid .5px rgba(255, 255, 255, .35);
+        border-left: solid .5px rgba(255, 255, 255, .35);
+        backdrop-filter: blur(5px);
+        color: #fff;
+    }
+</style>
+<body>
+
+<div class="container">
+    <div class="card"
+         data-tilt data-tilt-reverse="true" data-tilt-glare data-tilt-max-glare="0.25" data-tilt-scale="1.1"
+
+    >
+        <div class="content">
+            <h1>첫 번째</h1>
+            <p>오늘은 고기가 먹고 싶다.</p>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+
+<script>
+    VanillaTilt.init(document.querySelector('.card'), {
+        max: 15,
+        speed: 500,
+        scale: 1.15,
+        glare: true
+    })
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button>아무거나</button>
+<button>랜덤</button>
+
+<script>
+    const btn = document.querySelectorAll('button')
+
+    btn.forEach(btn => {
+
+        btn.addEventListener('click', () => {
+            let randNum1 = Math.floor(Math.random() * 10)
+            let randNum2 = Math.floor(Math.random() * 10)
+            let randNum3 = Math.floor(Math.random() * 10)
+            let randNum4 = Math.floor(Math.random() * 10)
+            let randNum5 = Math.floor(Math.random() * 10)
+            let randNum6 = Math.floor(Math.random() * 10)
+
+            document.body.style.background = `#${randNum1}${randNum2}${randNum3}${randNum4}${randNum5}${randNum6}`
+        })
+
+        // btn.addEventListener('click', () => {
+        //     let randomHex = Array.from({ length: 6 }, () => Math.floor(Math.random() * 10)).join('');
+        //     document.body.style.background = `#${randomHex}`;
+        // });
+
+    })
+
+
+</script>
+</body>
+</html>

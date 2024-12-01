@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if</title>
+</head>
+
+<style>
+  .box {
+    width: 100px;
+    height: 100px;
+    background: aqua;
+  }
+
+</style>
+<body>
+
+<div class="box"></div>
+
+
+<script>
+  let inputNum = prompt("숫자를 입력하세요");
+  inputNum = parseInt(inputNum);  //입력받은 프롬프트 값을 정수로 전환
+  const box = document.querySelector('.box');
+
+  if(inputNum > 5 ) {
+    box.style.background = 'tomato';
+  }
+
+</script>
+</body>
+</html>

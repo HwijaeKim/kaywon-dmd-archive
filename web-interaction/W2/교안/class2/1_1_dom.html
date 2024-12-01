@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button class="red">red!</button>
+<button id="blue">blue!</button>
+
+<script>
+    const redBtn = document.querySelector('.red')
+    const blueBtn = document.querySelector('#blue')
+
+    redBtn.addEventListener('click', () => {
+        document.body.style.backgroundColor = 'red'
+    })
+
+    blueBtn.addEventListener('click', () => {
+        document.body.style.background = 'blue'
+    })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position:absolute;
+            top:50%;
+            left:50%;
+            width:1000px;
+            height:500px;
+            margin-top:-250px;
+            margin-left:-500px;
+            border:1px solid #000;
+            perspective: 400px;
+        }
+
+        .box {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            position:absolute;
+            top:50%;
+            left:50%;
+            margin-top:-100px;
+            margin-left:-100px;
+            width:200px;
+            height:200px;
+        }
+
+        .back {
+            background: rgba(255, 0, 0, 0.5);
+            transform:translateZ(-100px);
+        }
+
+        .front {
+            background: rgba(0, 255, 247, .5);
+            transform:translateZ(100px);
+        }
+
+        .bottom {
+            background: rgba(255, 204, 0, .5);
+            transform:rotateX(90deg) translateZ(-100px);
+        }
+
+        .top {
+            background: rgba(8, 255, 0, .5);
+            transform:rotateX(90deg) translateZ(100px);
+        }
+
+        .left {
+            background: rgba(255, 106, 0, .5);
+            transform:rotateY(90deg) translateZ(-100px);
+        }
+
+        .right {
+            background: rgba(204, 0, 255, .5);
+            transform:rotateY(90deg) translateZ(100px);
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div class="box right">right</div>
+    <div class="box left">left</div>
+    <div class="box top">top</div>
+    <div class="box bottom">bottom</div>
+    <div class="box front">front</div>
+    <div class="box back">back</div>
+</div>
+
+
+</body>
+</html>
