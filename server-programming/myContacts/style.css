@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "SUIT", sans-serif;
+}
+
+header {
+    border-radius: 0 0 15px 15px;
+    /*border: solid 1px red;*/
+    width: 80%;
+    height: 80px;
+    margin: 0 auto;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+header nav {
+    width: 85%;
+    margin: 0 auto;
+}
+
+header nav span {
+    position: absolute;
+    /*border: solid 1px red;*/
+    height: 80px;
+    font-weight: 900;
+    font-size: 30px;
+    align-content: center;
+}
+main {
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .1);
+    /*border: solid 1px red;*/
+    width: 80%;
+    margin: 0 auto;
+}
+section#contacts {
+    /*margin-top: 100px;*/
+    width: 90%;
+    height: 600px;
+    margin: 100px auto;
+    padding-top: 30px;
+}
+
+button.addContact {
+    padding: 10px 50px;
+    border: solid .5px lightgray;
+    background: white;
+    border-radius: 10px;
+}
+button.addContact:hover {
+    background: #E7E7E7;
+}
+button.addContact:active {
+    background: #c8c8c8;
+}
+
+
+table {
+    width: 100%;
+    text-align: center;
+}
+
+tr, th, td {
+    border-bottom: solid .5px lightgray;
+    padding: 20px;
+}
+
+
+
+button.edit, .delete {
+    background: none;
+    border: none;
+    padding: 0 5px;
+}
+button.edit img, .delete img {
+    width: 26px;
+}
+
+/* button.edit img:hover, .delete img:hover {
+    filter: invert(64%) sepia(0%) saturate(949%) hue-rotate(164deg) brightness(93%) contrast(84%);
+} */

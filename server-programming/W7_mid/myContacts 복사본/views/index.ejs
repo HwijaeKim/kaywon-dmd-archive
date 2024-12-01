@@ -1,0 +1,63 @@
+<%- include('./include/_header') %>
+
+    <div class="clear"></div>
+<!-- MAIN -->
+    <main>
+        <% contacts.forEach(contact => { %>
+        <div id="sec1_bg">
+            <section id="sector1">
+                <div id="title_box">
+
+                        <h1><%= contact.name %>님,<br>현재 <%= contact.sangtae %>입니다.</h1>
+                    </div>
+    
+                    <article id="status_box">
+                        <div id="flexbox">
+                            <div class="status one">
+                                <div id="flexbox2">
+    
+                                    <div class="left_status one">
+                                        <p class="current_status">진행 상태: <%= contact.sangtae %><p>
+    
+                                            <p class="main_title">세션</p>
+                                            <span class="subtitle"><%= contact.session %></span>
+                
+                                            <p class="main_title">구분</p>
+                                            <span class="subtitle"><%= contact.type %></span>
+                
+                                            <p class="main_title">주문자 정보</p>
+                                            <span class="subtitle">
+                                                <%= contact.name %> <br>
+                                                <%= contact.phone %> <br>
+                                                <%= contact.email %>
+                                            </span>
+
+                                </div>
+                                <div class="left_status two">
+                                    <img src="https://synologykct.synology.me/img/code.png" alt="code">
+                                </div>
+
+                            </div>
+
+
+                            </table>
+
+                        </div>
+                        <div class="status two">
+                            <img src="https://synologykct.synology.me/img/status.png" alt="status">
+                        </div>
+                    </div>
+
+                    
+                </article>
+
+            </section>
+        </div>
+        <% }); %>
+
+
+
+    </main>
+    <!-- /MAIN -->
+
+    <%- include('./include/_footer') %>

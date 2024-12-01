@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문조회</title>
+    <link rel="stylesheet" href="css/newOrderCSS.css">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <div id="nav_logo_white">
+                <a href="./index.html"><img src="https://synologykct.synology.me/img/unifix_logo.png" alt="nav_logo" height="25"></a>
+            </div>
+
+            <ul class="nav_menu">
+                <li><button class="order">내 주문(수리)</button></li>
+                <li><button class="shopping">주변기기 쇼핑하기</button></li>
+                <li><button class="info">내 정보</button></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- /HEADER -->
+
+    <div class="clear"></div>
+<!-- MAIN -->
+    <main>
+        
+        <div id="sec1_bg">
+            
+            <section id="sector_neworder">
+                <h1 class="title">새 주문서 작성</h1>
+
+                <form action="" method="POST" id="addOrder">
+
+                    <p class="subtitle">기기 정보</p>
+                    <label for="deviceName">수리맡길 기기 이름을 적어주세요.</label><br>
+                    <input type="text" class="orderInput" name="devicename"><br><br>
+
+                    <label for="">케이스를 선택해 주세요.</label><br>
+                    <select name="case" class="orderInput">
+                        <option value="고장수리">고장수리</option>
+                        <option value="업그레이드(추가)">업그레이드(추가)</option>
+                        <option value="유지보수(청소)">유지보수(청소)</option>
+                    </select> <br><br>
+
+                    <label for="sangtae">현재 상태를 간략하게 적어주세요.</label><br>
+                    <input type="text" class="orderInput" name="sangtae"><br><br>
+
+
+
+                    <br><br>
+                    <p class="subtitle">주문자  정보</p>
+                    <label for="name">주문자명을 입력해 주세요.</label><br>
+                    <input type="text" class="orderInput" name="name"><br><br>
+
+                    <label for="name">이메일 주소를 입력해 주세요.</label><br>
+                    <input type="email" class="orderInput" name="email"><br><br>
+
+                    <label for="phone">전화번호를 입력해 주세요.</label><br>
+                    <input type="number" class="orderInput" name="phone"><br><br>
+
+
+                    <input type="submit" value="제출" class="orderSubmit">
+                    
+
+                    
+
+                </form>
+
+                
+
+
+            </section>
+        </div>
+
+
+
+    </main>
+    <!-- /MAIN -->
+
+</body>
+</html>
