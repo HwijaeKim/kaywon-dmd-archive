@@ -11,4 +11,4 @@ Vanilla JavaScript 기반의 프로그래밍 기술을 익히고 CSS Animation, 
 
 ### server-programming   
 (2024)2-2학기 서버프로그래밍 교과목 수업 중 실습+과제 결과물   
-Node.js와 MongoDB를 이용한 express서버를 구축하고 데이터베이스를 연동할 수 있는 기술을 익힌다.
+Node.js와 MongoDB를 기반으로 express서버를 구축하고 데이터베이스를 연동할 수 있는 기술을 익힌다.
