@@ -1,0 +1,54 @@
+<div id="sec1_bg">
+    <a href="/newOrder" class="btn new">새 주문 요청</a>
+
+    <% contacts.forEach(contact => { %>
+    <section id="sector1">
+        <div id="title_box">
+
+                <h1><%= contact.name %>님,<br><%= contact.devicename %> 관련 주문 요청입니다.</h1>
+            </div>
+
+            <article id="status_box">
+                <div id="flexbox">
+                    <div class="status one">
+                        <div id="flexbox2">
+
+                            <div class="left_status one">
+                                <p class="current_status">케이스: <%= contact.casewhat %><p>
+
+                                    <p class="main_title">기기명</p>
+                                    <span class="subtitle"><%= contact.devicename %></span>
+        
+                                    <p class="main_title">상태</p>
+                                    <span class="subtitle"><%= contact.sangtae %></span>
+        
+                                    <p class="main_title">주문자 정보</p>
+                                    <span class="subtitle">
+                                        <%= contact.name %> <br>
+                                        <%= contact.phone %> <br>
+                                        <%= contact.email %>
+                                    </span>
+
+                        </div>
+
+                    </div>
+
+
+                    </table>
+
+                </div>
+                <div class="status two">
+                    <a href="/order/<%= contact._id %>" class="btn update">주문 수정</a>
+                    <form action="/delete/<%= contact._id %>?_method=DELETE" method="POST" style="display: inline-block;">
+                        <input type="submit" value="삭제" class="btn-delree btn">
+                      </form>
+
+                </div>
+            </div>
+
+            
+        </article>
+
+    </section>
+</div>
+<% }); %>

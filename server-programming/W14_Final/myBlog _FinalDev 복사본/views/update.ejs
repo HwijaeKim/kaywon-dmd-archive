@@ -1,0 +1,51 @@
+<!-- MAIN -->
+<main>
+    <div id="sec1_bg">
+
+        <section id="sector_neworder">
+            <h1 class="title">주문 수정</h1>
+
+            <form action="/order/<%= contact._id %>?_method=PUT" method="POST" id="addOrder">
+
+                <p class="subtitle">기기 정보</p>
+                <label for="deviceName">수리맡길 기기 이름을 적어주세요.</label><br>
+                <input type="text" class="orderInput" name="devicename" value="<%= contact.devicename %>"><br><br>
+
+                <label for="">케이스를 선택해 주세요.</label><br>
+                <select name="casewhat" class="orderInput" value="<%= contact.casewhat %>">
+                    <option value="고장수리">고장수리</option>
+                    <option value="업그레이드(추가)">업그레이드(추가)</option>
+                    <option value="유지보수(청소)">유지보수(청소)</option>
+                </select> <br><br>
+
+                <label for="sangtae">현재 상태를 간략하게 적어주세요.</label><br>
+                <input type="text" class="orderInput" name="sangtae" value="<%= contact.sangtae %>"><br><br>
+
+
+
+                <br><br>
+                <p class="subtitle">주문자  정보</p>
+                <label for="name">주문자명을 입력해 주세요.</label><br>
+                <input type="text" class="orderInput" name="name" value="<%= contact.name %>"><br><br>
+
+                <label for="name">이메일 주소를 입력해 주세요.</label><br>
+                <input type="email" class="orderInput" name="email" value="<%= contact.email %>"><br><br>
+
+                <label for="phone">전화번호를 입력해 주세요.</label><br>
+                <input type="number" class="orderInput" name="phone" value="<%= contact.phone %>"><br><br>
+
+
+                <input type="submit" value="제출" class="orderSubmit">
+                <a href="/order" class="btn back">주문 페이지로 돌아가기</a>
+
+                
+
+                
+
+            </form>
+
+            
+
+
+        </section>
+    </div>

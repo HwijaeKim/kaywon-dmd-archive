@@ -1,0 +1,73 @@
+<div class="clear"></div>
+
+<main>
+  <div id="sec1_bg">
+
+  <div class="admin-layout">
+    <!-- 뉴스 업데이트 섹션 -->
+    <section class="news-update">
+      <h2>뉴스 업데이트</h2>
+    <!-- 업로드 폼 -->
+     <form action="/allPosts" method="post" enctype="multipart/form-data">
+        <label for="file">파일선택:</label>
+        <input type="file" id="file" name="file" required />
+
+        <label for="title">제목:</label>
+        <input type="text" id="title" name="title" placeholder="제목">
+
+        <label for="body">내용:</label>
+        <textarea name="body" id="body" placeholder="내용" rows="10"></textarea>
+
+        <button type="submit">업로드</button>
+     </form>
+
+     <br>
+
+     <!-- 업로드된 파일 정보가 있을 경우 표시 -->
+      <% if (typeof uploadedFile !== 'undefined') { %>
+        <h2>업로드된 파일:</h2>
+        <p>제목: <%= uploadedFile.title %></p>
+        <p>내용: <%= uploadedFile.body %></p>
+        <p>파일명: <%= uploadedFile.filename %></p>
+        <p>파일 경로: <%= uploadedFile.path %></p>
+
+        <!-- 이미지 미리보기 -->
+         <h3>업로드된 이미지:</h3>
+         <img src="/uploads/<%= uploadedFile.filename %>" alt="Uploaded Image" style="max-width: 500px;">
+    <% } %>
+  
+    </section>
+  
+    <!-- 댓글 관리 섹션 -->
+    <section class="comment-management">
+      <h2>댓글관리</h2>
+
+
+      <% comments.forEach(comment => { %>
+        <div class="comment">
+          <div class="comment-content">
+            <p><strong><%= comment.nickname %></strong></p>
+            <p><%= comment.body %></p>
+            <form action="/<%= comment._id %>?_method=DELETE" method="POST" style="display: inline-block; width: 100px;">
+              <input type="submit" value="삭제" class="btn-delree btn">
+            </form>
+
+        </div>
+        </div>
+      <% }); %>
+
+
+
+
+    </section>
+  </div>
+</div>
+</main>
+
+
+
+
+
+
+
+

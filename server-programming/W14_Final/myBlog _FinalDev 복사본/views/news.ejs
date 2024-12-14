@@ -1,0 +1,45 @@
+<div class="news-container">
+    <!-- 최신 뉴스 섹션 -->
+    <div class="news">
+      <div class="title">최신 테크 뉴스</div>
+
+      <% articles.forEach(item => { %>
+
+      <!-- 이미지 자리 -->
+      <img src="/uploads/<%= item.filename %>" alt="뉴스 이미지" class="news-image">
+      <h2><%= item.title %></h2>
+      <div>
+        <%= item.body %>
+      </div>
+
+
+      <% }); %>
+
+    </div>
+
+    <!-- 유저 댓글 섹션 -->
+    <div class="comments">
+      <div class="title">유저 댓글</div>
+
+      <form class="form-container" action="/news" method="POST">
+
+        <input type="text" name="nickname" placeholder="닉네임" required>
+
+        <textarea name="body" rows="3" placeholder="내용" required></textarea>
+
+        <button type="submit">등록</button>
+      </form>
+
+      <!-- 댓글 리스트 -->
+      <% comments.forEach(comment => { %>
+        <div class="comment">
+          <b><%= comment.nickname %></b> <br>
+          <big><%= comment.body %></big> <br><br>
+          <%= comment.createdAt %>
+        </div>
+      <% }); %>
+      <!-- <div class="comment">홍길동: 댓글 내용입니다.</div>
+      <div class="comment">홍길동: 댓글 내용입니다.</div>
+      <div class="comment">홍길동: 댓글 내용입니다.</div> -->
+    </div>
+  </div>

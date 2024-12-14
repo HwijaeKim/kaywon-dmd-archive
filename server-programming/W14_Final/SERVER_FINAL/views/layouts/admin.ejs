@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문조회</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <div id="nav_logo_white">
+                <a href="/"><img src="/img/unifix_logo.png" alt="nav_logo" height="25"></a>
+            </div>
+
+            <ul class="nav_menu">
+              <span><b>ADMIN ONLY!!!</b></span>
+                <li><a href="/order">최신 뉴스 수정</a></li>
+                <li><a href="/logout">어드민 로그아웃</a></li>
+                <!-- <li><a href="/news">최신 테크 뉴스</a></li>
+                <li><a href="/mypage">내 정보</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <!-- /HEADER -->
+
+    <main>
+
+      <%- body %>
+
+    </main>
+
+  </body>
+  </html>
